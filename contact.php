@@ -2,4 +2,4 @@
 
 
 
-require_once 'contact.view.php';
+require_once 'views/contact.view.php';

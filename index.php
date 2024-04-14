@@ -2,4 +2,4 @@
 
 
 
-require_once 'index.view.php';
+require_once 'views/index.view.php';
