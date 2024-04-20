@@ -2,14 +2,13 @@
 
 $config = require_once "config.php";
 $db = new Database($config['database']);
-
-
-$heading = 'Notes';
-$notes = [];
-$notes = $db->query('select * from notes where user_id = 4')->fetchAll();
+$heading = 'Note';
 
 
 
-require "views/notes.view.php";
+$note = $db->query('select * from notes where id = :id', ['id' => $_GET['id']])->fetch();
+
+
+require "views/note.view.php";
 
 
