@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Validator.php';
+
 $config = require_once "config.php";
 $db = new Database($config['database']);
 
@@ -7,8 +9,9 @@ $heading = 'Create Note';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
-    if (strlen($_POST['body']) == 0) {
-        $errors['body'] = 'A body is required';
+
+    if (!Validator::string($_POST['body'], 1, 100)) {
+        $errors['body'] = 'A body of no more then 255 char is required';
     }
 
     if (empty($errors)) {
