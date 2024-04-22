@@ -1,5 +1,9 @@
 <?php
 
+use Core\Database;
+use Core\Validator;
+
+
 require_once base_path('Validator.php');
 $errors = [];
 
