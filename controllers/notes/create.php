@@ -1,11 +1,10 @@
 <?php
 
-require_once 'Validator.php';
+require_once base_path('Validator.php');
+$errors = [];
 
-$config = require_once "config.php";
+$config = require_once base_path("config.php");
 $db = new Database($config['database']);
-
-$heading = 'Create Note';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
@@ -23,4 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require_once 'views/notes/create.view.php';
+view('notes/create.view.php', [
+    'heading' => 'Create Note',
+    'errors' => $errors,
+]);
