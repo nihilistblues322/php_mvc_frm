@@ -1,6 +1,5 @@
 <?php
 
-
 function dd($v)
 {
     echo '<pre>';
@@ -30,4 +29,12 @@ function view($path, $attr = [])
 {
     extract($attr);
     require base_path('views/' . $path);
+}
+
+function abort($code = 404)
+{
+    http_response_code($code);
+    require_once base_path("views/{$code}.php");
+    exit;
+
 }
