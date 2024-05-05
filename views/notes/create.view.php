@@ -7,7 +7,7 @@ require base_path('views/partials/head.php')?>
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-5 lg:px-8">
-        <form method="post">
+        <form method="post" action="/notes">
             <div class="col-span-full">
                 <label for="body" class="block text-sm font-medium leading-6 text-gray-900">Body</label>
                 <div class="mt-2">
